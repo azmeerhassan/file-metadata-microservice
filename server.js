@@ -5,11 +5,11 @@ import fileUpload from "express-fileupload";
 const app = express();
 app.use(cors());
 app.use(fileUpload());
-app.use(express.static("public"));
+app.use(express.static("views"));
 
 // Serve the HTML upload form
 app.get("/", (req, res) => {
-  res.sendFile(process.cwd() + "/public/index.html");
+  res.sendFile(process.cwd() + "/views/index.html");
 });
 
 // Handle file upload
